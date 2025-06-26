@@ -1,0 +1,49 @@
+<%-include('./homeHeader.ejs')%>
+
+<div id="loginbox">
+    <center>
+      <h2>Candidate Registration Form</h2>
+      <span style="color: red;"> <%=message%></span>
+    <form action="/candidate/candidateRegistration" method="post" enctype="multipart/form-data">
+    <input type="text" placeholder="Enter Full Name" id="name" name="name" class="input"> <br>
+    <input  class="input" type="email" placeholder="Enter email" id="email" name="_id"> <br>
+    <input class="input" type="password" placeholder="Enter password" id="password" name="password"> <br>
+    <span style="font-size: 16px;">Gender:-</span>
+    <input type="radio" id="male" value="Male" name="gender">
+    <label for="male" style="font-size: 16px;">Male</label>
+    <input type="radio" id="female" value="Female" name="gender">
+    <label for="female" style="font-size: 16px;">Female</label> <br>
+    <input type="date" name="dob" class="input">
+    <textarea name="address" placeholder="Enter Address" class="input"></textarea>
+    <input class="input" type="number" placeholder="Enter 10 digit Mobile No." id="contact" name="contact" maxlength="10"> <br>
+    <select name="qualification" class="input">
+        <option value="">Select Qualification</option>
+        <option value="B.COM">B.COM</option>
+        <option value="BCA">BCA</option>
+        <option value="BBA">BBA</option>
+        <option value="MBA">MBA</option>
+        <option value="MCA">MCA</option>
+        <option value="ME">ME</option>
+        <option value="PHD">PHD</option>
+    </select>
+
+   <input type="text" class="input" placeholder="Enter Percentage" name="percentage"> <br>
+   <select name="experience" class="input">
+    <option value="">Select Experience</option>
+    <option value="Fresher">Fresher</option>
+    <option value="1+ Year">1+ Year</option>
+    <option value="2+ Year">2+ Year</option>
+    <option value="3+ Year">3+ Year</option>
+    <option value="5+ Year">5+ Year</option>
+    <option value="10+ Year">10+ Year</option>
+    
+</select> 
+<span style="font-size: 16px;">Resume:-</span>
+<input type="file" id="file" name="docs"> <br>
+    
+    <input class="inputbtn" type="submit" value="Register"> <br>
+    <input class="inputbtn" type="reset" value="Reset">
+  </form>
+  <a href="/candidate/candidateLogin" class="demolink"> Already Registered ? Login here</a>
+  </center>
+</div>

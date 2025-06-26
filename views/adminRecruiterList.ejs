@@ -1,0 +1,44 @@
+<%- include('./adminHomeHeader.ejs')%>
+<body>
+    <br>
+    <center>
+        <h2>Recruiter List</h2>
+    </center>
+<table border="1" width="100%" cellspacing="0" cellpadding="2" id="'space">
+    <caption>
+        <center>
+            <span style="color: red;">
+                <%=message%>
+            </span>
+        </center>
+    </caption>
+    <thead>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Recruiter Type</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Status</th>    
+        <th>AdminVerify</th>
+        <th>EmailVerify</th>
+    </thead>
+    <tbody>
+        <%recruiterList.forEach((recruiter,index)=>{%>
+
+            <tr>
+                <td><%=index+1%></td>
+                <td><%=recruiter.name%></td>
+                <td><%=recruiter.recruiter%></td>
+                <td><%=recruiter.email%></td>
+                <td><%=recruiter.contact%></td>
+                <td><%=recruiter.address%></td>
+                <td><%=recruiter.status%></td>
+                <td><a href="/admin/adminVerifyRecruiter?recruiterEmail=<%=recruiter.email%>"><%=recruiter.adminVerify %></a></td>
+                <td><a><%=recruiter.emailVerify%></a></td>
+            </tr>
+
+        <%})%>
+    </tbody>
+</table>
+</body>

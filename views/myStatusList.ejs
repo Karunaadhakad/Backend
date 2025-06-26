@@ -1,0 +1,47 @@
+<%- include('./candidateHomeHeader.ejs')%>
+<body>
+    <br>
+    <center>
+        <h2>Applied Candidate Vacancy List</h2>
+            <span style="color:red"><%=message%></span>
+        <br>
+    </center>
+    <% if(message=="No Record Found"){%>
+        <center>
+            <span style="font-size:20px;color:red">
+                <%=message%>
+            </span>
+        </center>
+    <%}else{%>
+
+    <table width="100%" id="space" border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <th>S.No</th>
+            <th>AppliedCandidateId</th>
+            <th>VacancyId</th>
+            <th>CandidateEmail</th>
+            <th>RecruiterEmail</th>
+            <th>Post</th>
+            <th>RecruiterStatus</th>
+        </thead>
+        <tbody>
+           
+            <%appliedCandidateList.forEach((vacancy,index)=>{%>
+                 <tr>
+                    <td><%=index+1%></td>
+                    <td><%=vacancy.appliedvacancyId%></td>
+                    <td><%=vacancy.vacancyId%></td>
+                    <td><%=vacancy.candidateEmail%>
+                      
+                    </td>    
+                    <td><%=vacancy.recruiterEmail%></td>
+                    <td><%=vacancy.post%></td>
+                    <td><%=vacancy.recruiterStatus%></td>
+                   
+                </tr>   
+            <%})%>
+        </tbody>
+    </table>
+    <%}%>
+
+</body>

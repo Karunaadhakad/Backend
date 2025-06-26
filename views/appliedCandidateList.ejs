@@ -1,0 +1,59 @@
+<%- include('./recruiterHomeHeader.ejs')%>
+<body>
+    <br>
+    <center>
+        <h2>Applied Candidate Vacancy List</h2>
+            <span style="color:red"><%=message%></span>
+        <br>
+    </center>
+    <% if(message=="No Record Found"){%>
+        <center>
+            <span style="font-size:20px;color:red">
+                <%=message%>
+            </span>
+        </center>
+    <%}else{%>
+
+    <table width="100%" id="space" border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <th>S.No</th>
+            <th>AppliedVacancyId</th>
+            <th>VacancyId</th>
+            <th>CandidateEmail</th>
+            <th>RecruiterEmail</th>
+            <th>Post</th>
+            <th>Candidate Resume</th>
+            <th>RecruiterStatus</th>
+        </thead>
+        <tbody>
+           
+            <%appliedCandidateList.forEach((vacancy,index)=>{%>
+                 <tr>
+                    <td><%=index+1%></td>
+                    <td><%=vacancy.appliedvacancyId%></td>
+                    <td><%=vacancy.vacancyId%></td>
+                    <td><%=vacancy.candidateEmail%>
+                       
+                    </td>    
+                    <td><%=vacancy.recruiterEmail%></td>
+                    <td><%=vacancy.post%></td>
+                    <td> <a href="documents/<%=result[index]%>"><%=result[index]%></a></td>
+                    <td>
+                        <form action="/recruiter/recruiterUpdateStatus" method="post">
+                        <input type="hidden" value="<%=vacancy.vacancyId%>" name="vacancyId">
+                        <select name="recruiterStatus" id="input">
+                            <option value="<%=vacancy.recruiterStatus%>"><%=vacancy.recruiterStatus%></option>
+                            <option value="ShortListed">ShortListed</option>
+                            <option value="Better Luck Next Time">Better Luck Next Time</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                        <input type="submit" value="Update Status" id="inputbtn">
+                        </form>
+                    </td>
+                </tr>   
+            <%})%>
+        </tbody>
+    </table>
+    <%}%>
+
+</body>

@@ -1,0 +1,131 @@
+<%-include('./recruiterHomeHeader.ejs') %>
+<br>
+<center>
+    <form action="/vacancy/addVacancy" method="post">
+<table>
+    <caption>
+        <h2>Add Vacancy</h2>
+    <span style="color: red;"><%=message%></span>
+    </caption>
+    <tr>
+        <td>
+            <label>Post</label>
+        </td>
+        <td>
+            <input type="text" placeholder="Enter Post" id="Post" name="post" class="input">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Subject</label>
+        </td>
+        <td>
+            <select name="subject" id="subject" class="input">
+                <option value="">Select Subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Location</label>
+        </td>
+        <td>
+            <input type="text" placeholder="Enter Location" id="location" name="location" class="input">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Subject</label>
+        </td>
+        <td>
+            <select name="criteria" id="criteria" class="input">
+                <option value="">Select criteria</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="P.hd">P.hd</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Experirence</label></td>
+        <td>
+            <select name="experience" class="input">
+            <option value="">Select Experience</option>
+            <option value="Fresher">Fresher</option>
+            <option value="1+ Year">1+ Year</option>
+            <option value="2+ Year">2+ Year</option>
+            <option value="3+ Year">3+ Year</option>
+            <option value="5+ Year">5+ Year</option>
+            <option value="10+ Year">10+ Year</option>
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Mode</label></td>
+        <td>
+            <select name="mode" class="input">
+                <option value="">Select mode</option>
+                <option value="PartTime">PartTime</option>
+                <option value="FullTime">FullTime</option>        
+            </select> 
+        </td>
+    </tr>
+    <tr>
+        <td><label>Vacancy</label></td>
+        <td>
+            <input type="number" step="1" min="0" max="1000" placeholder="Enter no. of vacancy" class="input" name="vacancy">
+        </td>
+    </tr>
+    <tr>
+        <td><label>Salary</label></td>
+        <td>
+            <input type="number"placeholder="Enter Salary" class="input" name="salary">
+        </td>
+    </tr>
+    <tr>
+        <td><label>Adv.Date</label></td>
+        <td>
+            <input type="date" id="date" name="advDate" class="input">
+        </td>
+    </tr>
+    <tr>
+        <td><label>Last Date</label></td>
+        <td>
+            <input type="date" id="date" name="lastDate" class="input">
+        </td>
+    </tr>
+    <tr>
+        <td><label>Email</label></td>
+        <td>
+            <input type="email" id="email" name="email" value="<%=email%>" class="input" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Recruiter Type</label></td>
+        <td>
+            <input type="text" id="recruiter" name="recruiter" value="<%-recruiterObj.recruiter%>" class="input" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Recruiter Name</label></td>
+        <td>
+            <input type="text" id="name" name="name" value="<%-recruiterObj.name%>" class="input" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Add Vacancy" class="inputbtn"> <br>
+            <input type="reset" value="Reset" class="inputbtn">
+        </td>
+    </tr>
+</table>
+</form>
+</center>

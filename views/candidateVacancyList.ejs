@@ -1,0 +1,76 @@
+<%- include('./candidateHomeHeader.ejs')%>
+<body>
+    <br>
+    <center>
+        <h2>Candidate's Vacancy List</h2>
+        <br>
+        </center>
+   
+   
+    <%if(vacancyList.length==0){%>
+    <center>
+        <span style="color: red;">
+            <%=message%>
+        </span>
+    </center>
+   
+    <%}else{%>
+        <span style="color: red;">
+          <center> <%=message%></center> 
+        </span>
+        <table border="1" width="100%" cellspacing="0" cellpadding="2" id="'space">
+    <thead>
+        <th>S.No</th>
+        <th>VacancyId</th>
+        <th>Post</th>
+        <th>Subject</th>
+        <th>Location</th>
+        <th>Criteria</th>
+        <th>Experience</th>    
+        <th>Mode</th>
+        <th>Vacancy</th>
+        <th>Salary</th>
+        <th>AdvDate</th>
+        <th>LastDate</th>
+        <th>Recruiter</th>
+        <th>Apply</th>
+        
+    </thead>
+    <%}%>
+    <tbody>
+        <%vacancyList.forEach((vacancy,index)=>{
+              let obj = {
+                vacancyId :vacancy.vacancyId,
+                candidateEmail:email,
+                recruiterEmail:vacancy.email,
+                post:vacancy.post
+              }%>
+            <tr>
+                <td><%=index+1%></td>
+                <td><%=vacancy.vacancyId %></td>
+                <td><%=vacancy.post %></td>
+                <td><%=vacancy.subject %></td>
+                <td><%=vacancy.location %></td>
+                <td><%=vacancy.criteria %></td>
+                <td><%=vacancy.experience %></td>    
+                <td><%=vacancy.mode%></td>
+                <td><%=vacancy.vacancy %></td>
+                <td><%=vacancy.salary %></td>
+                <td><%=vacancy.advDate.toDateString()%></td>
+                <td><%=vacancy.lastDate.toDateString() %></td>
+                <td><%=vacancy.email%></td>
+                <td>
+                    <%if(status.some((obj)=>obj.vacancyId==vacancy.vacancyId && obj.candidateEmail==email)){%>    
+                        <span style="color:red">Applied</span>
+                <%}else{%>
+                        <a href="/appliedVacancy/candidateAppliedVacancy?data=<%=JSON.stringify(obj)%>">Apply</a>
+                <%}%>  
+                      
+                       
+                </td>    
+            </tr>
+
+        <%})%>
+    </tbody>
+</table>
+</body>

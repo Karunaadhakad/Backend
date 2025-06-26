@@ -1,0 +1,15 @@
+<%-include('./homeHeader.ejs')%>
+
+<div id="loginbox">
+    <center>
+      <h2>Candidate Login Form</h2>
+      <span style="color: red;"> <%=message%></span>
+    <form action="/candidate/candidateLogin" method="post">
+    <input  class="input" type="email" placeholder="Enter email" id="email" name="email"> <br>
+    <input class="input" type="password" placeholder="Enter password" id="password" name="password"> <br>
+    <input class="inputbtn" type="submit" value="Login"> <br>
+    <input class="inputbtn" type="reset" value="Reset">
+  </form>
+  <a href="/candidate/candidateRegistration" class="demolink">Yet not Registered ? Regester here</a>
+  </center>
+</div>

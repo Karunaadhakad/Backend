@@ -1,0 +1,52 @@
+<%- include('./adminHomeHeader.ejs')%>
+<body>
+    <br>
+    <center>
+        <h2>Candidate List</h2>
+    </center>
+<table border="1" width="100%" cellspacing="0" cellpadding="2" id="'space">
+    <caption>
+        <center>
+            <span style="color: red;">
+                <%=message%>
+            </span>
+        </center>
+    </caption>
+    <thead>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th> 
+        <th>DOB</th>      
+        <th>Address</th>
+        <th>Contact</th>      
+        <th>Qualification</th>
+        <th>Percentage</th>
+        <th>Experience</th>
+        <th>Status</th>
+        <th>AdminVerify</th>
+        <th>EmailVerify</th>
+    </thead>
+    <tbody>
+        <%candidateList.forEach((candidate,index)=>{%>
+
+            <tr>
+                <td><%=index+1%></td>
+                <td><%=candidate.name%></td>
+                <td><%=candidate._id%></td>
+                <td><%=candidate.gender%></td>
+                <td><%=candidate.dob%></td>
+                <td><%=candidate.address%></td>
+                <td><%=candidate.contact%></td>           
+                <td><%=candidate.qualification%></td>
+                <td><%=candidate.percentage%></td>
+                <td><%=candidate.experience%></td>
+                <td><%=candidate.status%></td>
+                <td><a href="/admin/adminVerifyCandidate?candidateEmail=<%=candidate._id%>"><%=candidate.adminVerify %></a></td>
+                <td><a><%=candidate.emailVerify%></a></td>
+            </tr>
+
+        <%})%>
+    </tbody>
+</table>
+</body>
