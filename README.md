@@ -16,5 +16,14 @@ then
 
 go to your browser and hit this localhost:3000  in url now run  that project
 
+also set the secret_key inside backend folder in env file
+
+ADMIN_SECRET_KEY = "qwertyuioplkjhgfdsazxcvbnm"
+RECRUITER_SECRET_KEY = "mnbvcxzlkjhgfdsapoiuytrewq"
+CANDIDATE_SECRET_KEY = "qazwsxedcrfvtgbyhnujmikolp"
+
+
 then setup frontend
+
+
 
