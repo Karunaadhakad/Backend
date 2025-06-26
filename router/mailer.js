@@ -4,8 +4,8 @@ var mailer = function (mailcontent,email, callback) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "dhakadkaruna99@gmail.com",
-      pass: "fxeooteortbdqwww",
+      user: "youremail@gmail.com",
+      pass: "your_pass",
     },
     tls: {
       rejectUnauthorized: false, // For local development only
@@ -13,7 +13,7 @@ var mailer = function (mailcontent,email, callback) {
   });
 
   const mailOption = {
-    from: "dhakadkaruna99@gmail.com",
+    from: "youremail@gmail.com",
     to: email,
     subject: "Verification mail by express community",
     html: mailcontent
